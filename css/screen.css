@@ -7,14 +7,37 @@
 \*------------------------------------*/
 
 :root {
-    /* colors */    
+    /* colors */
+    --global-color-white: #ffffff;
+    --global-color-lightred: #ff6565;
+    --global-color-blue: #3b86ff;
+    --global-color-purple: #a3a0fb;
+    --global-color-darkblue: #43425d;
+
+    --global-color-dark-xxx: #3b3b53;
+    --global-color-dark-xx: #4d4f5c;
+    --global-color-dark-x: #808495;
+    --global-color-dark: #a5a4bf;
+    --global-color-light: #bcbccb;
+    --global-color-light-x: #d7dae2;
+    --global-color-light-xx: #ebebf2;
+    --global-color-light-xxx: #f0f0f7;
+
+    --global-color-background: var(--global-color-light-xxx);
 
     /* Shadows */
 
     /* border radius */
 
     /* whitespace */
+    --global-baseline: 5px;
 
+    --global-whitespace-xxs: var(--global-baseline); /* = 5px */
+    --global-whitespace-xs: calc(var(--global-baseline) * 2); /* = 10px */
+    --global-whitespace-sm: calc(var(--global-baseline) * 3); /* = 15px */
+    --global-whitespace-md: calc(var(--global-baseline) * 4); /* = 20px */
+    --global-whitespace-lg: calc(var(--global-baseline) * 5); /* = 25px */
+    --global-whitespace-x1: calc(var(--global-baseline) * 6); /* = 30px */
     /* transitions */
 }
 
@@ -31,11 +54,12 @@
 html {
     font-size: 16px;
     line-height: 1.5;
-    font-family: Helvetica, arial, sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: white;
+    color: var(--global-color-darkblue);
+    background-color: var(--global-color-light-xxx);
 }
 
 *,
@@ -52,9 +76,6 @@ html {
 */
 
 ::selection {
-    background: mediumslateblue;
-    color: white;
-    text-shadow: none;
 }
 
 /*------------------------------------*\
@@ -86,20 +107,21 @@ h3 {
 
 h1 {
     font-size: 36px;
-    line-height: 48px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline) * 10);
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 h2 {
-    font-size: 32px;
-    line-height: 40px;
-    margin: 0 0 24px;
+    font-size: 28px;
+    font-weight: normal;
+    line-height: calc(var(--global-baseline) * 8);
+    margin: 0 0 var(--global-whitespace-lg);
 }
 
 h3 {
     font-size: 26px;
-    line-height: 32px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline) * 6);
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 h4,
@@ -107,8 +129,8 @@ h5,
 h6 {
     font-size: 16px;
     font-weight: 600;
-    line-height: 24px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-basline) * 5);
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 p,
@@ -118,7 +140,7 @@ dl,
 table,
 address,
 figure {
-    margin: 0 0 24px;
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 ul,
@@ -158,21 +180,16 @@ hr {
 }
 
 a {
-    transition: all .1s;
-    color: mediumslateblue;
-    outline-color: mediumslateblue;
-    outline-width: medium;
-    outline-offset: 2px;
 }
 
 a:visited,
 a:active {
-    color: mediumslateblue;
+
 }
 
 a:hover,
 a:focus {
-    color: slateblue;
+
 }
 
 label,
@@ -274,10 +291,130 @@ select {
 \*------------------------------------*/
 
 /*
-    Component: Logo
+    Component: app
     ---
-    Website main logo
 */
+
+.c-app{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: max(22%,260px) 1fr;
+    grid-template-rows: auto 1fr;
+}
+
+.c-app__logo{
+    background-color: var(--global-color-dark-xxx);
+    font-size: 20px;
+    line-height: 20px;
+    padding: 25px;
+    color: var(--global-color-white);
+    letter-spacing: 4px;
+}
+
+.c-app__topbar{
+    background-color: var(--global-color-white);
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.04);
+}
+
+.c-app__sidebar{
+    background-color: var(--global-color-darkblue);
+    overflow-x:hidden;
+    overflow-y:auto;
+    scrollbar-color: var(--global-color-dark-xxx) var(--global-color-darkblue);
+    scrollbar-width: thin;
+}
+
+/* Chrome scrollbar */
+.c-app__sidebar::-webkit-scrollbar {
+    height: 12px;
+    width: 12px;
+    background-color: var(--global-color-darkblue);
+}
+.c-app__sidebar::-webkit-scrollbar-thumb {
+    background: var(--global-color-dark-xxx);
+}
+
+.c-app__main::-webkit-scrollbar {
+    height: 12px;
+    width: 12px;
+    background-color: var(--global-color-background);
+}
+.c-app__main::-webkit-scrollbar-thumb {
+    background: var(--global-color-dark-xxx);
+}
+
+
+.c-app__main{
+    padding: 1vh 10vw;
+    overflow-x:hidden;
+    overflow-y:auto;
+    scrollbar-color: var(--global-color-dark-xxx) var(--global-color-background);
+    scrollbar-width: thin;
+}
+
+
+
+/*
+    Component: nav
+    ---
+*/
+
+
+.c-main-nav{
+    color: var(--global-color-white);
+    font-weight: 400;
+}
+
+.c-main-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.c-main-nav-list-item{
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    color: var(--global-color-white);
+    fill: var(--global-color-dark);
+    background-color: var(--global-color-darkblue);
+    transition: 0.4s;
+    border-left: 4px solid var(--global-color-purple);
+    margin-left: -4px;
+}
+
+.is-selected,
+.c-main-nav-list-item:hover{
+    margin-left: 0;
+    fill: var(--global-color-purple);
+    background-color: var(--global-color-dark-xxx);
+    transition: none;
+}
+
+.c-main-nav-list-item-link{
+    color: var(--global-color-white);
+    text-decoration: none;
+    display: block;
+    padding: 15px 25px;
+    fill:inherit;
+}
+
+/* .is-selected{
+    margin-left: 0;
+    border-left: 4px solid var(--global-color-purple);
+    background-color: var(--global-color-dark-xxx);
+} */
+
+.c-icon--sidebar
+{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    /* fill: var(--global-color-dark); */
+}
+
 
 /*------------------------------------*\
 #UTILITIES
