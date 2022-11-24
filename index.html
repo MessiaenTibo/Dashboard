@@ -10,6 +10,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/screen.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="app.js"></script>
     </head>
     <body>
 
@@ -239,8 +241,8 @@
 
 
 
-<!-- 
-                        <li class="c-main-nav-list-item">
+
+                        <!-- <li class="c-main-nav-list-item">
                             <a href="#" class="c-main-nav-list-item-link">
                                 <svg class="c-icon c-icon--sidebar">
                                     <use xlink:href="#c-icon_setting"></use>
@@ -311,13 +313,63 @@
                 <h2>
                     Overview
                 </h2>
+                <div class="c-dashboard">
+                    <div class="c-dashboard__items u-grid-column-span-12 u-grid-row-span-1">
+                        <div class="c-card">
+                            <div class="c-card__header">
+                                <div class="c-card__header__title">
+                                    <p>Visitors per day</p>
+                                </div>
+                                <div class="c-card__header__actions">
+                                    <input type="radio" id="1 day" name="period" value="day" class="c-radiobutton js-button-click" checked>
+                                    <label for="1 day" class="c-radiobutton-label u-inline">1 day</label>
+                                    <input type="radio" id="1 week" name="period" value="week" class="c-radiobutton js-button-click">
+                                    <label for="1 week" class="c-radiobutton-label u-inline">1 week</label>
+                                    <input type="radio" id="1 month" name="period" value="month" class="c-radiobutton js-button-click">
+                                    <label for="1 month" class="c-radiobutton-label u-inline">1 month</label>
+                                    <input type="radio" id="1 Year" name="period" value="year" class="c-radiobutton js-button-click">
+                                    <label for="1 Year"  class="c-radiobutton-label u-inline">1 Year</label>
+                                </div>
+                            </div>
+                            <div class="c-card__body">
+                                <canvas class="js-graph" width="3" height="1"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="c-dashboard__items u-grid-column-span-6 u-grid-row-span-1">
+                        <p>Grid item 2</p>
+                    </div>
+                    <div class="c-dashboard__items u-grid-column-span-6 u-grid-row-span-1">
+                        <p>Grid item 3</p>
+                    </div>
+                    <div class="c-dashboard__items u-grid-column-span-4 u-grid-row-span-4">
+                        <p>Grid item 4</p>
+                    </div>
+                    <div class="c-dashboard__items u-grid-column-span-8 u-grid-row-span-2">
+                        <p>Grid item 5</p>
+                        <p>Test</p>
+                    </div>
+                    <div class="c-dashboard__items u-grid-column-span-4 u-grid-row-span-2">
+                        <p>Grid item 6</p>
+                        <p>Test</p>
+                    </div>
+                    <div class="c-dashboard__items u-grid-column-span-4 u-grid-row-span-2">
+                        <p>Grid item 7</p>
+                    </div>
+                    <div class="c-dashboard__items u-grid-column-span-4 u-grid-row-span-1">
+                        <p>Grid item 8</p>
+                    </div>
+                    <div class="c-dashboard__items u-grid-column-span-8 u-grid-row-span-1">
+                        <p>Grid item 9</p>
+                    </div>
 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur officiis praesentium doloremque. Qui magnam optio magni dolor vitae minus doloremque repudiandae totam, sunt cumque labore tempora autem consequatur ea ratione?</p>
+                </div>
+                <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur officiis praesentium doloremque. Qui magnam optio magni dolor vitae minus doloremque repudiandae totam, sunt cumque labore tempora autem consequatur ea ratione?</p>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ex delectus voluptas vitae veritatis, labore quis excepturi beatae doloremque, iste consequatur eaque quaerat quidem qui temporibus? Voluptatem dolorem optio mollitia.</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas reprehenderit corrupti dignissimos nemo incidunt. Dolores quidem, modi doloribus earum dolorum sequi, odit sunt ad blanditiis quod minus assumenda magnam quasi.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe obcaecati quae asperiores. Facere dolorum consectetur dignissimos aliquam provident ut deleniti debitis, hic eum ipsam nemo inventore odit earum totam sint!</p>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa tempore sunt corrupti deserunt incidunt at, iure necessitatibus, nisi aspernatur tenetur rerum nam ea harum placeat ad. Quae consectetur quisquam unde.</p>
-                <!-- <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel ad et, debitis vero soluta labore voluptas aut nostrum quis, facilis beatae reiciendis deleniti sunt cumque earum reprehenderit minus. Neque, iure.</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel ad et, debitis vero soluta labore voluptas aut nostrum quis, facilis beatae reiciendis deleniti sunt cumque earum reprehenderit minus. Neque, iure.</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum alias distinctio fugiat earum nemo possimus eligendi odio exercitationem aut nam quos perferendis sequi numquam, repellendus quam officiis praesentium, suscipit quo.</p>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit aut, consequuntur tempore esse dolores reiciendis. Dolorum, aut, iure ipsum illo in eligendi, molestiae natus quis tenetur quasi sequi. Iure, obcaecati.</p>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic officia architecto, debitis corrupti odio nisi commodi ipsum quidem sit aliquid modi officiis saepe aspernatur maxime beatae laudantium pariatur voluptatibus molestias.</p>

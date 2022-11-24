@@ -7,6 +7,8 @@
 \*------------------------------------*/
 
 :root {
+    --global-root-font-size: 16;
+
     /* colors */
     --global-color-white: #ffffff;
     --global-color-lightred: #ff6565;
@@ -30,7 +32,7 @@
     /* border radius */
 
     /* whitespace */
-    --global-baseline: 5px;
+    --global-baseline: calc(5rem / var(--global-root-font-size));
 
     --global-whitespace-xxs: var(--global-baseline); /* = 5px */
     --global-whitespace-xs: calc(var(--global-baseline) * 2); /* = 10px */
@@ -52,7 +54,6 @@
 */
 
 html {
-    font-size: 16px;
     line-height: 1.5;
     font-family: 'Source Sans Pro', sans-serif;
     box-sizing: border-box;
@@ -106,20 +107,20 @@ h3 {
 }
 
 h1 {
-    font-size: 36px;
+    font-size: calc(36rem / var(--global-root-font-size));
     line-height: calc(var(--global-baseline) * 10);
     margin: 0 0 var(--global-whitespace-md);
 }
 
 h2 {
-    font-size: 28px;
+    font-size: calc(28rem / var(--global-root-font-size));
     font-weight: normal;
     line-height: calc(var(--global-baseline) * 8);
     margin: 0 0 var(--global-whitespace-lg);
 }
 
 h3 {
-    font-size: 26px;
+    font-size: calc(26rem / var(--global-root-font-size));
     line-height: calc(var(--global-baseline) * 6);
     margin: 0 0 var(--global-whitespace-md);
 }
@@ -127,7 +128,7 @@ h3 {
 h4,
 h5,
 h6 {
-    font-size: 16px;
+    font-size: calc(16rem / var(--global-root-font-size));
     font-weight: 600;
     line-height: calc(var(--global-basline) * 5);
     margin: 0 0 var(--global-whitespace-md);
@@ -145,7 +146,7 @@ figure {
 
 ul,
 ol {
-    padding-left: 24px;
+    padding-left: calc(24rem / var(--global-root-font-size));
 }
 
 li ul,
@@ -155,9 +156,9 @@ li ol {
 
 blockquote {
     font-style: normal;
-    font-size: 23px;
-    line-height: 32px;
-    margin: 0 0 24px;
+    font-size: calc(23rem / var(--global-root-font-size));
+    line-height: calc(32rem / var(--global-root-font-size));
+    margin: 0 0 calc(24rem / var(--global-root-font-size));
 }
 
 blockquote * {
@@ -167,16 +168,16 @@ blockquote * {
 
 figcaption {
     font-weight: 400;
-    font-size: 12px;
-    line-height: 16px;
-    margin-top: 8px;
+    font-size: calc(12rem / var(--global-root-font-size));
+    line-height: calc(16rem / var(--global-root-font-size));
+    margin-top: calc(8rem / var(--global-root-font-size));
 }
 
 hr {
     border: 0;
-    height: 1px;
+    height: calc(1rem / var(--global-root-font-size));
     background: LightGrey;
-    margin: 0 0 24px;
+    margin: 0 0 calc(24rem / var(--global-root-font-size));
 }
 
 a {
@@ -213,7 +214,7 @@ select {
 
 .o-row {
     position: relative;
-    padding: 24px 24px 0;
+    padding: calc(24rem / var(--global-root-font-size)) calc(24rem / var(--global-root-font-size)) 0;
 }
 
 /*
@@ -277,10 +278,10 @@ select {
 
 .o-hide-accessible {
     position: absolute;
-    width: 1px;
-    height: 1px;
+    width: calc(1rem / var(--global-root-font-size));
+    height: calc(1rem / var(--global-root-font-size));
     padding: 0;
-    margin: -1px;
+    margin: calc(-1rem / var(--global-root-font-size));
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     border: 0;
@@ -298,22 +299,23 @@ select {
 .c-app{
     display: grid;
     height: 100vh;
-    grid-template-columns: max(22%,260px) 1fr;
+    grid-template-columns: max(22%,calc(260rem / 16)) 1fr;
     grid-template-rows: auto 1fr;
 }
 
 .c-app__logo{
     background-color: var(--global-color-dark-xxx);
-    font-size: 20px;
-    line-height: 20px;
-    padding: 25px;
+    font-size: calc(20rem / var(--global-root-font-size));
+    line-height: calc(20rem / var(--global-root-font-size));
+    padding: calc(25rem / var(--global-root-font-size));
     color: var(--global-color-white);
-    letter-spacing: 4px;
+    letter-spacing: calc(4rem / var(--global-root-font-size));
 }
+
 
 .c-app__topbar{
     background-color: var(--global-color-white);
-    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.04);
+    box-shadow: 0 calc(2rem / var(--global-root-font-size)) calc(6rem / var(--global-root-font-size)) 0 rgba(0,0,0,0.04);
 }
 
 .c-app__sidebar{
@@ -326,8 +328,8 @@ select {
 
 /* Chrome scrollbar */
 .c-app__sidebar::-webkit-scrollbar {
-    height: 12px;
-    width: 12px;
+    height: calc(12rem / var(--global-root-font-size));
+    width: calc(12rem / var(--global-root-font-size));
     background-color: var(--global-color-darkblue);
 }
 .c-app__sidebar::-webkit-scrollbar-thumb {
@@ -335,8 +337,8 @@ select {
 }
 
 .c-app__main::-webkit-scrollbar {
-    height: 12px;
-    width: 12px;
+    height: calc(12rem / var(--global-root-font-size));
+    width: calc(12rem / var(--global-root-font-size));
     background-color: var(--global-color-background);
 }
 .c-app__main::-webkit-scrollbar-thumb {
@@ -345,12 +347,60 @@ select {
 
 
 .c-app__main{
-    padding: 1vh 10vw;
+    padding: 1vh 2vw;
     overflow-x:hidden;
     overflow-y:auto;
     scrollbar-color: var(--global-color-dark-xxx) var(--global-color-background);
     scrollbar-width: thin;
 }
+
+/*
+    Component: grid
+    ---
+*/
+
+.c-dashboard{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: calc(30rem / var(--global-root-font-size));
+}
+
+.c-dashboard__items{
+    background-color: var(--global-color-white);
+    border-radius: calc(4rem / var(--global-root-font-size));
+    box-shadow: 0 calc(2rem / var(--global-root-font-size)) calc(6rem / var(--global-root-font-size)) 0 rgba(0,0,0,0.04);
+    padding: calc(8rem / var(--global-root-font-size));
+}
+
+
+/*
+    Component: card
+    ---
+*/
+.c-card{
+
+}
+
+.c-card__header{
+/* space between elements*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: calc(8rem / var(--global-root-font-size)) calc(16rem / var(--global-root-font-size));
+}
+
+.c-card__header__title{
+
+}
+
+.c-card__header__actions{
+
+}
+
+.c-card__body{
+    padding: calc(8rem / var(--global-root-font-size));
+}
+
 
 
 
@@ -373,16 +423,16 @@ select {
 
 
 .c-main-nav-list-item{
-    font-size: 15px;
-    line-height: 20px;
-    letter-spacing: 1px;
+    font-size: calc(15rem / var(--global-root-font-size));
+    line-height: calc(20rem / var(--global-root-font-size));
+    letter-spacing: calc(1rem / var(--global-root-font-size));
     font-weight: 400;
     color: var(--global-color-white);
     fill: var(--global-color-dark);
     background-color: var(--global-color-darkblue);
     transition: 0.4s;
-    border-left: 4px solid var(--global-color-purple);
-    margin-left: -4px;
+    border-left: calc(4rem / var(--global-root-font-size)) solid var(--global-color-purple);
+    margin-left: calc(-4rem / var(--global-root-font-size));
 }
 
 .is-selected,
@@ -397,7 +447,7 @@ select {
     color: var(--global-color-white);
     text-decoration: none;
     display: block;
-    padding: 15px 25px;
+    padding: calc(15rem / var(--global-root-font-size)) calc(25rem / var(--global-root-font-size));
     fill:inherit;
 }
 
@@ -409,16 +459,117 @@ select {
 
 .c-icon--sidebar
 {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
+    width: calc(20rem / var(--global-root-font-size));
+    height: calc(20rem / var(--global-root-font-size));
+    margin-right: calc(10rem / var(--global-root-font-size));
     /* fill: var(--global-color-dark); */
+}
+
+.c-radiobutton{
+    /* display: none; */
+    position: absolute;
+    width: calc(1rem / var(--global-root-font-size));
+    height: calc(1rem / var(--global-root-font-size));
+    padding: 0;
+    margin: calc(-1rem / var(--global-root-font-size));
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.c-radiobutton:checked + label{
+    background-color: var(--global-color-purple);
+    color: var(--global-color-white);
+    border-radius: calc(100rem / var(--global-root-font-size));
+}
+
+
+.c-radiobutton-label{
+    padding: calc(10rem / var(--global-root-font-size));
+}
+
+.c-radiobutton:focus + label{
+    color: var(--global-color-light-xxx);
+    box-shadow: 0px 0px calc(2rem / var(--global-root-font-size)) calc(4rem / var(--global-root-font-size)) rgba(163,160,251,0.4);
 }
 
 
 /*------------------------------------*\
 #UTILITIES
 \*------------------------------------*/
+
+/*
+    Utilities: Grid spans
+    ---
+    Utility classes to put specific spans onto elements
+*/
+
+/* grid column span*/
+.u-grid-column-span-1{
+    grid-column: span 1;
+}
+.u-grid-column-span-2{
+    grid-column: span 2;
+}
+.u-grid-column-span-3{
+    grid-column: span 3;
+}
+.u-grid-column-span-4{
+    grid-column: span 4;
+}
+.u-grid-column-span-5{
+    grid-column: span 1;
+}
+.u-grid-column-span-6{
+    grid-column: span 6;
+}
+.u-grid-column-span-7{
+    grid-column: span 7;
+}
+.u-grid-column-span-8{
+    grid-column: span 8;
+}
+.u-grid-column-span-9{
+    grid-column: span 9;
+}
+.u-grid-column-span-10{
+    grid-column: span 10;
+}
+.u-grid-column-span-11{
+    grid-column: span 11;
+}
+.u-grid-column-span-12{
+    grid-column: span 12;
+}
+
+
+/* grid row span*/
+.u-grid-row-span-1{
+    grid-row: span 1;
+}
+.u-grid-row-span-2{
+    grid-row: span 2;
+}
+.u-grid-row-span-3{
+    grid-row: span 3;
+}
+.u-grid-row-span-4{
+    grid-row: span 4;
+}
+.u-grid-row-span-5{
+    grid-row: span 5;
+}
+.u-grid-row-span-6{
+    grid-row: span 6;
+}
+.u-grid-row-span-7{
+    grid-row: span 7;
+}
+.u-grid-row-span-8{
+    grid-row: span 8;
+}
+
+
 
 /*
     Utilities: color
@@ -516,6 +667,15 @@ select {
 
 .u-text-sm {
     font-size: 14px;
+}
+
+/*
+    Utilities: inline
+    Utility classes to inline elements
+*/
+
+.u-inline {
+    display: inline;
 }
 
 /*------------------------------------*\
