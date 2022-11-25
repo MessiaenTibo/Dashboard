@@ -490,7 +490,7 @@ select {
 
 .c-radiobutton:focus + label{
     color: var(--global-color-light-xxx);
-    box-shadow: 0px 0px calc(2rem / var(--global-root-font-size)) calc(4rem / var(--global-root-font-size)) rgba(163,160,251,0.4);
+    box-shadow: calc(0rem / var(--global-root-font-size)) calc(0rem / var(--global-root-font-size)) calc(2rem / var(--global-root-font-size)) calc(4rem / var(--global-root-font-size)) rgba(163,160,251,0.4);
 }
 
 
@@ -600,23 +600,23 @@ select {
 }
 
 .u-mb-xs {
-    margin-bottom: 4px !important;
+    margin-bottom: calc(4rem / var(--global-root-font-size)) !important;
 }
 
 .u-mb-sm {
-    margin-bottom: 8px !important;
+    margin-bottom: calc(8rem / var(--global-root-font-size)) !important;
 }
 
 .u-mb-md {
-    margin-bottom: 16px !important;
+    margin-bottom: calc(16rem / var(--global-root-font-size)) !important;
 }
 
 .u-mb-lg {
-    margin-bottom: 32px !important;
+    margin-bottom: calc(32rem / var(--global-root-font-size)) !important;
 }
 
 .u-mb-xl {
-    margin-bottom: 48px !important;
+    margin-bottom: calc(48rem / var(--global-root-font-size)) !important;
 }
 
 /*
@@ -666,7 +666,7 @@ select {
 */
 
 .u-text-sm {
-    font-size: 14px;
+    font-size: calc(14rem / var(--global-root-font-size));
 }
 
 /*
@@ -751,7 +751,7 @@ No media query since this is the default in mobile first design
     }
     pre,
     blockquote {
-        border: 1px solid #999;
+        border: calc(1rem / var(--global-root-font-size)) solid #999;
         page-break-inside: avoid;
     }
     /*
